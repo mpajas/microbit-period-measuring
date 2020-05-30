@@ -27,20 +27,16 @@ sleep(1000)
 display.show("1")
 sleep(1000)
 print("A")
-display.show(Image("99999:"
-                "99999:"
-                "99999:"
-                "99999:"
-                "99999"))
 data = array("f",[0]*350)
 for i in range(350):
+    if i%25==0:
+        display.scroll(str((350-i)//25),delay=50)
     sleep(40)
     x = accelerometer.get_x()
     y = accelerometer.get_y()
     z = accelerometer.get_z()
     norm = (x**2 + y**2 + z**2)**(1/2)
     data[i]= norm
-print("Calculating...")
 display.scroll("Calculating...")
 T = calculate_period(find_peaks(autocorrelate(data)))
 while True:
