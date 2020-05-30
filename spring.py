@@ -26,7 +26,6 @@ display.show("2")
 sleep(1000)
 display.show("1")
 sleep(1000)
-print("A")
 data = array("f",[0]*350)
 for i in range(350):
     if i%25==0:
