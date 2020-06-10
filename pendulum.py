@@ -44,20 +44,41 @@ for i in range(N):
 
 display.scroll("Calculating...")
 
-
 autocor = autocorrelate(data)
 peaks = find_peaks(autocor)
-T = calculate_period(peaks)
-#T = calculate_period(find_peaks(autocorrelate(data)))
+t = calculate_period(peaks)
+T = 2*t
+
+#potrebno je dodati odsječak za računanje duljine:
+#početak odsječka
 pi = 3.14159265359
 g = 9.81
-l = (((2*T)/(2*pi))**2)*g
+l = (((T)/(2*pi))**2)*g #m
+#kraj odsječka
+
+#potrebno je dodati odsječak za računanje gravitacijske akceleracije:
+#početak odsječka
+#pi = 3.14159265359
+#l = 0.60 #m
+#g = l*((2*pi)/(T))**2
+#kraj odsječka
+
 
 while True:
     display.show("A")
     if button_a.is_pressed():
-        display.scroll(str(2*T))
+        display.scroll(str(T))
         display.scroll("sec")
+
+    #potrebno je dodati odsječak za računanje duljine:
+    #početak odsječka
     if button_b.is_pressed():
         display.scroll(str(l))
         display.scroll("m")
+    #kraj odsječka
+
+    #potrebno je dodati odsječak za računanje gravitacijske akceleracije:
+    #početak odsječka
+    #if button_b.is_pressed():
+    #    display.scroll(str(g))
+    #kraj odsječka
