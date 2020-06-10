@@ -47,11 +47,20 @@ display.scroll("Calculating...")
 autocor = autocorrelate(data)
 peaks = find_peaks(autocor)
 T = calculate_period(peaks)
+#potrebno je dodati odsječak za računanje konstante elastičnosti:
+#početak odsječka
 pi = 3.14159265359
-g = 9.81
+m = 0.200 #kg
+k = m*((2*pi)/T)**2
+#kraj odsječka
 
 while True:
     display.show("A")
     if button_a.is_pressed():
         display.scroll(str(T))
         display.scroll("sec")
+    #potrebno je dodati odsječak za računanje konstante elastičnosti:
+    #početak odsječka
+    #if button_b.is_pressed():
+    #    display.scroll(str(k))
+    #kraj odsječka
