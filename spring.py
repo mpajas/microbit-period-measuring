@@ -49,9 +49,9 @@ peaks = find_peaks(autocor)
 T = calculate_period(peaks)
 #potrebno je dodati odsječak za računanje konstante elastičnosti:
 #početak odsječka
-pi = 3.14159265359
-m = 0.200 #kg
-k = m*((2*pi)/T)**2
+#pi = 3.14159265359
+#m = 0.200 #kg
+#k = m*((2*pi)/T)**2
 #kraj odsječka
 
 while True:
